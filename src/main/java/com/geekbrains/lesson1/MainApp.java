@@ -21,13 +21,14 @@ public class MainApp {
         };
         for (Animal o: catsAndDogs){
             o.voice();
+            if(o instanceof Cat){
+                (( Cat )catsAndDogs[0]).catMethod();
+            }
         }
         Cat.doSomething();
 
-        if(catsAndDogs[0] instanceof Cat){
-            (( Cat )catsAndDogs[0]).catMethod();
-        }
-        System.out.println(cat == catsAndDogs[0]);
+
+        //System.out.println(cat == catsAndDogs[0]);
         System.out.println(cat.equals(catsAndDogs[0]));
 
         System.out.println(cat.hashCode());
