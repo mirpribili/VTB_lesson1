@@ -19,4 +19,20 @@ public class Cat extends Animal{
     public void catMethod() {
         System.out.println("the cat suddenly freaks out");
     }
+    @Override
+    public boolean equals(Object object){
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof Cat)){
+            return false;
+        }
+        Cat another = (Cat)object;
+        return this.name.equals(another.name) && this.age == another.age && this.color.equals(another.color);
+    }
+
+    @Override
+    public int hashCode(){
+        return color.length() * 13 + age * 71 + name.length() * 15;
+    }
 }
