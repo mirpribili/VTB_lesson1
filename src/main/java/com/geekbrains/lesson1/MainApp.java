@@ -3,6 +3,8 @@ package com.geekbrains.lesson1;
 import animals.Animal;
 import animals.Cat;
 import animals.Dog;
+import com.geekbrains.lesson1.homework.animals.DomesticCat;
+import com.geekbrains.lesson1.homework.animals.Tiger;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -33,5 +35,22 @@ public class MainApp {
 
         System.out.println(cat.hashCode());
         System.out.println(catsAndDogs[0].hashCode());
+
+
+
+        /* Home work */
+        com.geekbrains.lesson1.homework.animals.Animal[] animals = {
+                new DomesticCat("Маха-Коха", 200),
+                new com.geekbrains.lesson1.homework.animals.Dog("Бим", 1000, 50),
+                new Tiger("Тигран", 10000, 400)
+        };
+        for (com.geekbrains.lesson1.homework.animals.Animal o : animals){
+            o.run(500);
+            o.swim(50);
+        }
+        System.out.println("Животных: " + com.geekbrains.lesson1.homework.animals.Animal.count );
+        System.out.println("Собак: " + com.geekbrains.lesson1.homework.animals.Dog.count );
+        System.out.println("Тигров: " + Tiger.count );
+        System.out.println("Домашних котов: " + DomesticCat.count);
     }
 }
